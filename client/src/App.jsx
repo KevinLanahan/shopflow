@@ -1,26 +1,7 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5001/api/health")
-      .then((res) => {
-        setMessage(res.data.message);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
-
-  return (
-    <div>
-      <h1>ShopFlow</h1>
-      <p>{message}</p>
-    </div>
-  );
+  return <HomePage />;
 }
 
 export default App;
